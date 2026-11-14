@@ -1,0 +1,59 @@
+Motion Skill Scout Community License v1.0
+SPDX-License-Identifier: LicenseRef-Motion-Skill-Scout-1.0
+
+Copyright (c) 2026 Saeed SheikhAmiri
+https://github.com/SaeedSheikhAmiri
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, subject to the following conditions:
+
+1. ATTRIBUTION
+   The above copyright notice and this permission notice shall be included in
+   all copies or substantial portions of the Software. The Software must not be
+   represented as the official Motion Skill Scout without the prior written
+   permission of the copyright holder.
+
+2. NO AUTOMATIC UPDATES
+   You may not deploy, configure, publish, or distribute the Software, or any
+   modified version, in a manner that automatically updates, replaces, or
+   silently modifies an installed copy, or that automatically pushes changes to
+   the original repository, without the prior written permission of the
+   copyright holder. Every update to an installed copy must be initiated by a
+   human, reviewed, and pinned to a specific commit. This clause does not
+   restrict a manual installation of a newer version that the user has reviewed
+   and approved.
+
+3. FORKS AND MODIFIED VERSIONS
+   Modified versions and forks must use a different `name` value in `SKILL.md`
+   so that two versions cannot be confused. They must not be pushed to the
+   original repository, and they must not be presented as the official version.
+   Contributions submitted as pull requests may be merged only by the copyright
+   holder.
+
+4. TRADEMARK
+   This license does not grant permission to use the name, logo, or branding of
+   the copyright holder, except for reasonable and customary attribution and
+   for describing the origin of the Software.
+
+5. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
+   SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES
+   OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+   ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
+
+6. TERMINATION
+   If you violate these conditions, your rights under this license terminate.
+   If the copyright holder notifies you in writing of a violation, you may
+   restore your rights by curing the violation within 30 days of receiving the
+   notice. Termination does not limit the copyright holder's right to seek
+   other remedies.
+
+This is a custom source-available license. It is free of charge, and it is
+short on purpose. If you need different terms, ask the copyright holder in
+writing.
