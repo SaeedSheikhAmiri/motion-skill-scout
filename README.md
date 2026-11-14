@@ -41,6 +41,8 @@ With the skills CLI:
 npx skills add SaeedSheikhAmiri/motion-skill-scout
 ```
 
+The CLI tracks the repository and also ships a `skills update` command. For client work, prefer the pinned manual install below: an update then requires a new approval instead of a single `skills update`.
+
 Or manually, pinned:
 
 ```bash

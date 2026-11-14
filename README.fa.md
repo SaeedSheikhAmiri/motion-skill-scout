@@ -42,6 +42,8 @@
 npx skills add SaeedSheikhAmiri/motion-skill-scout
 ```
 
+این CLI مخزن را دنبال می‌کند و دستور `skills update` هم دارد. برای کار مشتری نصب دستی و پین‌شدهٔ پایین را ترجیح بده: آن‌وقت هر آپدیت به تأیید تازه نیاز دارد، نه یک `skills update`.
+
 یا نصب دستی و پین‌شده:
 
 ```bash

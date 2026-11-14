@@ -185,6 +185,7 @@ Remove: delete <destination> and its skills.lock entry
 - Installing an `unclear` license for client work without a written warning and a confirmed yes.
 - Installing five packs “to try them”. Offer the three-item stack and one alternative.
 - Updating an installed skill because a newer commit exists. Updates require a new request and a new approval.
+- Running `skills update`, `git pull`, `npm update` or any updater on an installed pack on the user's behalf.
 - Running `postinstall` scripts, credential prompts or network setup you have not read.
 - Sending footage, transcripts or brand assets to any external service as part of scouting.
 
