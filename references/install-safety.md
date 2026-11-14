@@ -44,11 +44,11 @@ If any of these appear: stop, show the user the line, and recommend an alternati
 ## After approval, before first use
 
 ```bash
-bash scripts/vendor.sh <owner>/<repo> <full-sha> <destination>
-node scripts/scan-skills.mjs <destination>
-node scripts/lock.mjs --path <destination> --repo <owner>/<repo> \
+bash "$SKILL_DIR/scripts/vendor.sh" <owner>/<repo> <full-sha> <destination>
+node "$SKILL_DIR/scripts/scan-skills.mjs" <destination>
+node "$SKILL_DIR/scripts/lock.mjs" --path <destination> --repo <owner>/<repo> \
   --commit <full-sha> --license "<license>" --file skills.lock.json
-node scripts/verify-lock.mjs --file skills.lock.json
+node "$SKILL_DIR/scripts/verify-lock.mjs" --file skills.lock.json
 ```
 
 Then read the installed `SKILL.md` one more time, in place. A pinned copy can differ from the README you browsed.

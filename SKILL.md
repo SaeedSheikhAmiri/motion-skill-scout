@@ -17,12 +17,22 @@ Turn “I want motion in my video” into an approved, pinned, verified install 
 5. **Never auto-update.** This skill does not update itself, and installed skills are only updated after a new, explicit approval. See `references/update-policy.md`.
 6. **Protect the footage.** Do not upload source video, transcripts or client assets to a third-party service without asking.
 
+## Paths
+
+`SKILL_DIR` is the folder containing this `SKILL.md`. Run every script with that absolute path:
+
+```bash
+node "$SKILL_DIR/scripts/recommend.mjs" ...
+```
+
+Keep user artifacts in the **user's project**, not in the skill folder: `.motion-scout/answers.json`, `skills.lock.json`, and the chosen install destination (for example `.claude/skills/<id>`). Never write the user's lockfile inside `SKILL_DIR`.
+
 ## Step 0 — Preflight (10 seconds)
 
 Run:
 
 ```bash
-node scripts/preflight.mjs
+node "$SKILL_DIR/scripts/preflight.mjs"
 ```
 
 Tell the user in one line what is missing. `ffmpeg` is required for any editing or muxing stack; Node 18+ is required for Remotion. Missing tools are a warning, not a blocker for the interview.
@@ -76,7 +86,7 @@ Allowed values are listed in `references/scoring.md`. If an answer is unknown, o
 ## Step 2 — Score, do not guess
 
 ```bash
-node scripts/recommend.mjs --answers .motion-scout/answers.json --json
+node "$SKILL_DIR/scripts/recommend.mjs" --answers .motion-scout/answers.json --json
 ```
 
 The script returns a stack (`baseline`, `primary`, `utility`), alternatives, reasons, caveats and a license flag per item. Trust the ranking for *shortlisting*, not for the final decision: you still have to explain the trade-off in one sentence per item.
@@ -135,9 +145,9 @@ git ls-remote https://github.com/<owner>/<repo>.git HEAD
 Then install each item **pinned**:
 
 ```bash
-bash scripts/vendor.sh <owner>/<repo> <full-sha> ".claude/skills/<id>"
-node scripts/scan-skills.mjs ".claude/skills/<id>"
-node scripts/lock.mjs --path ".claude/skills/<id>" --repo <owner>/<repo> \
+bash "$SKILL_DIR/scripts/vendor.sh" <owner>/<repo> <full-sha> ".claude/skills/<id>"
+node "$SKILL_DIR/scripts/scan-skills.mjs" ".claude/skills/<id>"
+node "$SKILL_DIR/scripts/lock.mjs" --path ".claude/skills/<id>" --repo <owner>/<repo> \
   --commit <full-sha> --license "<license>" --file skills.lock.json
 ```
 
@@ -148,9 +158,9 @@ Run the commands one at a time and report the result of each. If a clone fails, 
 ## Step 5 — Verify
 
 ```bash
-node scripts/scan-skills.mjs "<destination>"     # SKILL.md files and descriptions
-node scripts/verify-lock.mjs --file skills.lock.json
-node scripts/preflight.mjs                        # re-check ffmpeg/node for this stack
+node "$SKILL_DIR/scripts/scan-skills.mjs" "<destination>"     # SKILL.md files and descriptions
+node "$SKILL_DIR/scripts/verify-lock.mjs" --file skills.lock.json
+node "$SKILL_DIR/scripts/preflight.mjs"                       # re-check ffmpeg/node for this stack
 ```
 
 Confirm three things out loud:

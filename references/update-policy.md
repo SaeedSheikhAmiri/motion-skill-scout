@@ -45,8 +45,8 @@ Show the commit range, the files touched and the license status. Ask once:
 
 ```bash
 NEW_SHA=$(git -C <destination> rev-parse FETCH_HEAD)
-bash scripts/vendor.sh <owner>/<repo> "$NEW_SHA" "<destination>.next"
-node scripts/scan-skills.mjs "<destination>.next"
+bash "$SKILL_DIR/scripts/vendor.sh" <owner>/<repo> "$NEW_SHA" "<destination>.next"
+node "$SKILL_DIR/scripts/scan-skills.mjs" "<destination>.next"
 ```
 
 Compare the new `SKILL.md` before swapping:
@@ -60,9 +60,9 @@ If approved:
 ```bash
 mv <destination> "<destination>.previous"
 mv "<destination>.next" <destination>
-node scripts/lock.mjs --path <destination> --repo <owner>/<repo> \
+node "$SKILL_DIR/scripts/lock.mjs" --path <destination> --repo <owner>/<repo> \
   --commit "$NEW_SHA" --license "<license>" --file skills.lock.json
-node scripts/verify-lock.mjs --file skills.lock.json
+node "$SKILL_DIR/scripts/verify-lock.mjs" --file skills.lock.json
 ```
 
 Keep `.previous` until the first successful render. Then delete it.
@@ -72,7 +72,7 @@ Keep `.previous` until the first successful render. Then delete it.
 ```bash
 rm -rf <destination>
 mv "<destination>.previous" <destination>
-node scripts/lock.mjs --path <destination> --repo <owner>/<repo> \
+node "$SKILL_DIR/scripts/lock.mjs" --path <destination> --repo <owner>/<repo> \
   --commit <OLD_SHA> --license "<license>" --file skills.lock.json
 ```
 
